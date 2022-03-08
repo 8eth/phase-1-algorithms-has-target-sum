@@ -1,17 +1,18 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  for (let num = 0; num < array.length; num++) {
+    let compliment = target - array[num]
+    for (let diff = num + 1; diff < array.length; diff++) {
+      if (array[diff] === compliment) return true
+    }
+  }
+  return false
 }
 
 /* 
   Write the Big O time complexity of your function here
-*/
 
-/* 
-  Add your pseudocode here
-*/
-
-/*
-  Add written explanation of your solution here
+  Runtime: O(n^2) (Quadratic)
 */
 
 // You can run `node index.js` to view these console logs
